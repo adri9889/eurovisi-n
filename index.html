@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eurovision Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Eurovision Tournament</h1>
+            <p>Choose your favorite song!</p>
+        </header>
+        <div id="game-container">
+            <div class="progress-bar" id="progress"></div>
+            <div class="comparison">
+                <div class="player-section">
+                    <div class="country-header">
+                        <img id="left-flag" src="" alt="Left Flag">
+                        <div class="country-name-container">
+                            <span id="left-country"></span>
+                        </div>
+                    </div>
+                    <img id="left-img" src="" alt="Left Artist" style="cursor: pointer;">
+                    <div id="left-info"></div>
+                </div>
+                <div class="player-section">
+                    <div class="country-header">
+                        <img id="right-flag" src="" alt="Right Flag">
+                        <div class="country-name-container">
+                            <span id="right-country"></span>
+                        </div>
+                    </div>
+                    <img id="right-img" src="" alt="Right Artist" style="cursor: pointer;">
+                    <div id="right-info"></div>
+                </div>
+            </div>
+            <button id="restart-btn">Restart Tournament</button>
+        </div>
+        <div id="ranking-container" style="display: none;">
+            <h2>Final Ranking</h2>
+            <ul id="ranking-list"></ul>
+            <button id="save-ranking-btn">Save as Image</button>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Remove or comment out the Cloudflare script if not needed -->
+    <!-- <script>(function(){...})();</script> -->
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9281579a2e2a4d9a',t:'MTc0MzI3MjAxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

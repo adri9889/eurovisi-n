@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    color: #d4af37;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #f0f0f0;
+}
+
+#game-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+#ranking-container {
+    background: #1a2a44;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.progress-bar {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    color: #2a5298;
+    font-weight: bold;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+}
+
+.comparison {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.player-section {
+    text-align: center;
+    width: 45%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 10px;
+    border: 3px solid #1e3c72;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.player-section:hover {
+    transform: scale(1.01);
+}
+
+.player-section img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #1e3c72;
+    transition: opacity 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.player-section img:hover {
+    opacity: 0.9;
+}
+
+.country-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.country-name-container {
+    text-align: center;
+    width: 100%;
+    margin-left: 10px; /* Adjust spacing from flag */
+}
+
+#left-flag, #right-flag {
+    width: 70px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid #000;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+#left-flag:hover, #right-flag:hover {
+    transform: scale(1.1);
+}
+
+#left-country, #right-country {
+    font-size: 2.2em;
+    color: #d4af37;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+#left-info, #right-info {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #444;
+    font-weight: 500;
+    min-height: 130px;
+    padding-bottom: 10px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+#left-info div, #right-info div {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+button {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    transform: translateY(-2px);
+}
+
+#ranking-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#ranking-list {
+    list-style: none;
+    padding: 0;
+    column-count: 2;
+    column-gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    break-inside: avoid;
+}
+
+.ranking-item:nth-child(odd) {
+    background: #2a3b5a;
+}
+
+.ranking-item:nth-child(even) {
+    background: #1a2a44;
+}
+
+.ranking-item.rank-1 {
+    background: #ffd700;
+}
+
+.ranking-item.rank-2 {
+    background: #c0c0c0;
+}
+
+.ranking-item.rank-3 {
+    background: #cd7f32;
+}
+
+.ranking-item .position {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10px;
+    min-width: 30px;
+    text-align: right;
+}
+
+.ranking-item .country-name-container {
+    text-align: center;
+    margin-right: 10px;
+}
+
+.ranking-item .country-name {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    flex: 1;
+    display: block;
+}
+
+.ranking-item .flag {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.ranking-item .country-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .player-section {
+        width: 100%;
+    }
+    .comparison {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .player-section img {
+        width: 250px;
+        height: 250px;
+    }
+    #left-country, #right-country {
+        font-size: 1.5em;
+    }
+    #left-flag, #right-flag {
+        width: 50px;
+        height: 30px;
+    }
+    #ranking-list {
+        column-count: 1;
+    }
+    .ranking-item {
+        padding: 8px;
+    }
+    .ranking-item .position {
+        font-size: 1em;
+    }
+    .ranking-item .country-name {
+        font-size: 0.9em;
+    }
+    .ranking-item .country-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
